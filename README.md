@@ -1,7 +1,7 @@
 # Turkish Pre-trained Word2Vec Model
 (Turkish version is below. / Türkçe için aşağıya bakın.)
 
-This tutorial includes how to train word2vec model for Turkish language from Wikipedia dump. This code is written in Python 3 by using [gensim](https://radimrehurek.com/gensim/) library. Turkish is an agglutinative language and there are many words with the same lemma and different suffixes in the wikipedia corpus. I will write Turkish lemmatizer to increase quality of the model.
+This tutorial introduces how to train word2vec model for Turkish language from Wikipedia dump. This code is written in Python 3 by using [gensim](https://radimrehurek.com/gensim/) library. Turkish is an agglutinative language and there are many words with the same lemma and different suffixes in the wikipedia corpus. I will write Turkish lemmatizer to increase quality of the model.
 
 ## Prerequisites
 * [Python 3](https://www.python.org/download/releases/3.0/)
