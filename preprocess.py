@@ -31,7 +31,7 @@ if __name__ == '__main__':
 	inputFile = sys.argv[1]
 	outputFile = sys.argv[2]
 	
-	wiki = WikiCorpus(inputFile, lemmatize=False, tokenizer_func = tokenize_tr)
+	wiki = WikiCorpus(inputFile, lemmatize=False,tokenizer_func = tokenize_tr)
 	logging.info("Wikipedia dump is opened.")
 	output = open(outputFile,"w",encoding="utf-8")
 	logging.info("Output file is created.")
@@ -42,6 +42,5 @@ if __name__ == '__main__':
 		i+=1
 		if (i % 10000 == 0):
 			logging.info("Saved " +str(i) + " articles.")
-
 
 	output.close()
