@@ -15,19 +15,23 @@ To train word2vec model with gensim library, you need to put each document into 
 '''
 preprocess.py trwiki-20180101-pages-articles.xml.bz2 wiki.tr.txt
 '''
-
-
-#TO-DO#
-Tutorial to explain how to create word2vec model 
-#TO-DO#
-
+<br />
+<br />
+<br />
+<br />
+<br />
 # Eğitilmiş Türkçe Word2Vec Modeli
 Bu çalışma Wikipedia'daki Türkçe makalelerden Türkçe word2vec modelinin nasıl çıkarılabileceğini anlatmak için yapılmıştır. Kod [gensim](https://radimrehurek.com/gensim/) kütüphanesi kullanılarak Python 3 ile yazılmıştır. Gelecek zamanlarda, Türkçe "lemmatization" algoritmasıyla aynı kök ve yapım ekleri fakat farklı çekim eklerine sahip kelimelerin aynı kelimeye işaret etmesi sağlanarak modelin kalitesi arttırılacaktır.
 
-#TO-DO#
-Tutorial to explain how to create word2vec model 
-#TO-DO#
+## Gereksinimler
+* [Python 3](https://www.python.org/download/releases/3.0/)
+* [Gensim](https://radimrehurek.com/gensim/install.html)
 
-#TO-DO#
-Link for Pretrained Model
-#TO-DO#
+## Korpusu Edinmek
+Word2vec modellerini eğitmek için büyük korpuslara ihtiyaç duyuluyor. Açık kaynaklı bir örnek olarak, Türkçe dilinde yazılmış tüm wikipedia makalelerine [buradan](https://dumps.wikimedia.org/trwiki/) ulaşabilirsiniz. Şu anda yayınlanmış olan 20180101 adlı korpus ve [bu link](https://dumps.wikimedia.org/trwiki/20180101/trwiki-20180101-pages-articles.xml.bz2) üzerinden indirebilirsiniz. Tabii ki başka bir korpus da kullanabilirsiniz fakat gensim ile eğitebilmek için korpusunuz aşağıda belirtildiği gibi düzenlemelisiniz.
+
+## Korpusu Düzenlemek
+Gensim kütüphanesi ile word2vec modeli eğitebilmek için korpusunuzu belli bir şekilde düzenlemeniz gerekmektedir. Her bir makale, noktalama işaretlerinden ayıklanmış bir şekilde, bir satıra yazılmalıdır. Her bir satırda bir adet makale bulunacak şekilde bir dosyaya yazılmalıdır. Gensim kütüphanesi wikipedia korpusuna özel olarak bazı metodlar sunuyor. preprocess.py dosyasını çalıştırarak kendi wikipedia korpusunuzu düzenleyebilirsiniz. Bu python kodu iki tane argüman alıyor. İlki, wikipedia korpusunuzun dosya yolu(wikipedia korpusunuzu ayıklamadan). İkinci argüman ise çıktı dosyanızın yolu olacak. Örneğin:
+'''
+preprocess.py trwiki-20180101-pages-articles.xml.bz2 wiki.tr.txt
+'''
