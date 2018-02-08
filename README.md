@@ -13,13 +13,13 @@ We need to have big corpus to train word2vec model. You can access all wikipedia
 ## Preprocessing the Corpus
 To train word2vec model with gensim library, you need to put each document into a line without punctuations. So, the output file should include all articles and each article should be in a line. Gensim library provides methods to do this preprocessing step. However, tokenize function is modified for Turkish language. You can run preprocess.py to modify your wikipedia dump corpus. It takes two arguments. First one is the path to the wikipedia dump(without extracting). Second one is the path to the output file. For example:
 ```
-preprocess.py trwiki-20180101-pages-articles.xml.bz2 wiki.tr.txt
+python3 preprocess.py trwiki-20180101-pages-articles.xml.bz2 wiki.tr.txt
 ```
 
 ## Training Word2Vec Model
 After preprocessing the corpus, training word2vec model with gensim library is very easy. You can use the code below to create word2vec model. First argument is revised corpus and the second one is name of the model. 
 ```
-trainCorpus.py wiki.tr.txt trmodel
+python3 trainCorpus.py wiki.tr.txt trmodel
 ```
 This command creates 3 output file. First is trmodel which should be loaded to the gensim library. Others include word vectors in numpy for hierarchical softmax and negative sampling.
 
@@ -67,13 +67,13 @@ Word2vec modellerini eğitmek için büyük korpuslara ihtiyaç duyuluyor. Açı
 ## Korpusu Düzenlemek
 Gensim kütüphanesi ile word2vec modeli eğitebilmek için korpusunuzu belli bir şekilde düzenlemeniz gerekmektedir. Her bir makale, noktalama işaretlerinden ayıklanmış bir şekilde, bir satıra yazılmalıdır. Her bir satırda bir adet makale bulunacak şekilde bir dosyaya yazılmalıdır. Gensim kütüphanesi wikipedia korpusuna özel olarak bazı metodlar sunuyor. Yine de Türkçe dili için ayırıcı(tokenizer) fonksiyonu düzenlenmiştir. preprocess.py dosyasını çalıştırarak kendi wikipedia korpusunuzu düzenleyebilirsiniz. Bu python kodu iki tane argüman alıyor. İlki, wikipedia korpusunuzun dosya yolu(wikipedia korpusunuzu ayıklamadan). İkinci argüman ise çıktı dosyanızın yolu olacak. Örneğin:
 ```
-preprocess.py trwiki-20180101-pages-articles.xml.bz2 wiki.tr.txt
+python3 preprocess.py trwiki-20180101-pages-articles.xml.bz2 wiki.tr.txt
 ```
 
 ## Word2Vec Modelini Eğitmek
 Korpusu düzenledikten sonra, gensim kütüphanesiyle word2vec modelini kolayca eğitebilirsiniz. Word2Vec modeli oluşturmak için aşağıdaki kodu kullanabilirsiniz. İlk argüman düzenlenmiş korpus dosyasının yolu, ikinci argüman ise modelin adı olacak.
 ```
-trainCorpus.py wiki.tr.txt trmodel
+python3 trainCorpus.py wiki.tr.txt trmodel
 ```
 Bu komut ile 3 adet dosya oluşur. İlki, trmodel adında gensim kütüphanesini kullarak load edeceğiniz bir dosyadır. Diğerleri ise hierarchical softmax ve negative sampling kullanılarak numpy kütüphanesi ile oluşturulmuş kelime vektörlerini içerir.
 
