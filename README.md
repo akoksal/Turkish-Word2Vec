@@ -61,17 +61,17 @@ Bu çalışma Wikipedia'daki Türkçe makalelerden Türkçe word2vec modelinin n
 * [Python 3](https://www.python.org/download/releases/3.0/)
 * [Gensim](https://radimrehurek.com/gensim/install.html)
 
-## Korpusu Edinmek
-Word2vec modellerini eğitmek için büyük korpuslara ihtiyaç duyuluyor. Açık kaynaklı bir örnek olarak, Türkçe dilinde yazılmış tüm wikipedia makalelerine [buradan](https://dumps.wikimedia.org/trwiki/) ulaşabilirsiniz. Şu anda yayınlanmış olan 20180101 adlı korpus ve [bu link](https://dumps.wikimedia.org/trwiki/20180101/trwiki-20180101-pages-articles.xml.bz2) üzerinden indirebilirsiniz. Tabii ki başka bir korpus da kullanabilirsiniz fakat gensim ile eğitebilmek için korpusunuz aşağıda belirtildiği gibi düzenlemelisiniz.
+## Derlemi Edinmek
+Word2vec modellerini eğitmek için büyük derlemlere ihtiyaç duyuluyor. Açık kaynaklı bir örnek olarak, Türkçe dilinde yazılmış tüm wikipedia makalelerine [buradan](https://dumps.wikimedia.org/trwiki/) ulaşabilirsiniz. Şu anda yayınlanmış olan 20180101 adlı derlem ve [bu link](https://dumps.wikimedia.org/trwiki/20180101/trwiki-20180101-pages-articles.xml.bz2) üzerinden indirebilirsiniz. Tabii ki başka bir derlem de kullanabilirsiniz fakat gensim ile eğitebilmek için derleminizi aşağıda belirtildiği gibi düzenlemelisiniz.
 
-## Korpusu Düzenlemek
-Gensim kütüphanesi ile word2vec modeli eğitebilmek için korpusunuzu belli bir şekilde düzenlemeniz gerekmektedir. Her bir makale, noktalama işaretlerinden ayıklanmış bir şekilde, bir satıra yazılmalıdır. Her bir satırda bir adet makale bulunacak şekilde bir dosyaya yazılmalıdır. Gensim kütüphanesi wikipedia korpusuna özel olarak bazı metodlar sunuyor. Yine de Türkçe dili için ayırıcı(tokenizer) fonksiyonu düzenlenmiştir. preprocess.py dosyasını çalıştırarak kendi wikipedia korpusunuzu düzenleyebilirsiniz. Bu python kodu iki tane argüman alıyor. İlki, wikipedia korpusunuzun dosya yolu(wikipedia korpusunuzu ayıklamadan). İkinci argüman ise çıktı dosyanızın yolu olacak. Örneğin:
+## Derlemi Düzenlemek
+Gensim kütüphanesi ile word2vec modeli eğitebilmek için derleminizi belli bir şekilde düzenlemeniz gerekmektedir. Her bir makale, noktalama işaretlerinden ayıklanmış bir şekilde, bir satıra yazılmalıdır. Her bir satırda bir adet makale bulunacak şekilde bir dosyaya yazılmalıdır. Gensim kütüphanesi wikipedia derlemine özel olarak bazı metodlar sunuyor. Yine de Türkçe dili için ayırıcı(tokenizer) fonksiyonu düzenlenmiştir. preprocess.py dosyasını çalıştırarak kendi wikipedia derleminizi düzenleyebilirsiniz. Bu python kodu iki tane argüman alıyor. İlki, wikipedia derleminizin dosya yolu(wikipedia derleminizi ayıklamadan). İkinci argüman ise çıktı dosyanızın yolu olacak. Örneğin:
 ```
 python3 preprocess.py trwiki-20180101-pages-articles.xml.bz2 wiki.tr.txt
 ```
 
 ## Word2Vec Modelini Eğitmek
-Korpusu düzenledikten sonra, gensim kütüphanesiyle word2vec modelini kolayca eğitebilirsiniz. Word2Vec modeli oluşturmak için aşağıdaki kodu kullanabilirsiniz. İlk argüman düzenlenmiş korpus dosyasının yolu, ikinci argüman ise modelin adı olacak.
+Derlemi düzenledikten sonra, gensim kütüphanesiyle word2vec modelini kolayca eğitebilirsiniz. Word2Vec modeli oluşturmak için aşağıdaki kodu kullanabilirsiniz. İlk argüman düzenlenmiş derlem dosyasının yolu, ikinci argüman ise modelin adı olacak.
 ```
 python3 trainCorpus.py wiki.tr.txt trmodel
 ```
